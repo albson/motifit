@@ -16,7 +16,23 @@
 					</tr>
 				</tbody>
 		   </table>
+		   <%= link_to 'Comment / Encourage / Support', new_post_comment_path(@post) %>
        </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+      	<h1 class="post_title"> <%= @post.title %></h1>
+
+      	<% if @comments.blank? %>
+      	<h3> No comments yet </h3>
+      	<%= link_to 'Write Comment', new_post_comment_path(@post), class: "btn btn-danger" %>
+      	<% else %>
+      		<% @comments.each do |comment| %>
+      			<div class="comments">
+      				<p><%= comment.body %> </p>
+      				</div>
+      			<% end %>	
+      			<% end %>	
+
       </div>
 		</div>
 	</div>
