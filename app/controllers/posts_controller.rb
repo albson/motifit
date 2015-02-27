@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.new(post_params)
+		@post = Post.find(params[:id])
 	end
 
 	def create
@@ -37,6 +37,6 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.requre(:post).permit(:title,:body)
+			params.require(:post).permit(:title,:body)
 		end
 end
