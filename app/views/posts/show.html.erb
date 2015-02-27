@@ -1,16 +1,26 @@
-<%= image_tag @post.image.url(:medium) %>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
- 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-
- 
+<div class="panel panel-default">
+	<div class= "panel-body">
+		<div class="row">
+			<div class="col-md-4">
+			<%= image_tag @post.image.url(:medium) %>
+				<div class="table-responsive">
+				<table class="table">
+				<tbody>
+					<tr>
+						<td><strong>Title:</strong></td>
+						<td><%= @post.title %></td>
+					</tr>
+					<tr>
+						<td><strong>Body:</strong></td>
+						<td><%= @post.body %></td>
+					</tr>
+				</tbody>
+		   </table>
+       </div>
+      </div>
+		</div>
+	</div>
+</div> 
 
 <%= link_to 'Edit Post', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
