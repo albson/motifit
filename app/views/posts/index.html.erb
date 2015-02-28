@@ -1,15 +1,38 @@
+
+<% if user_signed_in? %>
+
+<h1>
 Quote of the Day
 <blockquote id="qod-quote">
    ... loading ...
 </blockquote>
 <script src="http://quotesondesign.com/api/3.0/api-3.0.js" 
 type="text/javascript" charset="utf-8"></script>
+</h1>
 
 <div class="row">
-	<% @posts.each do |post| %>
-		<div class="col-sm-6 col-md-3">
-			<div class="thumbnail">
-				<%= link_to (image_tag post.image.url(:medium), class: 'image'), post %>
-			</div>
-		</div>
-	<% end %>	
+  <% @posts.each do |post| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag post.image.url(:medium), class: 'image'), post %>
+      </div>
+    </div>
+  <% end %> 
+
+<% else %>
+
+<video autoplay  id="bgvid" loop controls muted>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="http://artbees.net/themes/jupiter-demo/wp-content/uploads/2013/10/shutterstock_v3702740_4.m4v" type="video/mp4" type="video/mp4">
+</video>
+<div id="description">
+<h1>MotiFit</h1>
+<p>
+<p>Find your motivational fitness goals with our site!</p>
+
+
+</div>
+<%end%>
+
+</body>
+</html>
