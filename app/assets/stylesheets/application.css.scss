@@ -33,13 +33,9 @@ video {
   background-size: cover;
   transition: 1s opacity;
 }
-.stopfade { 
-   opacity: .5;
-}
+
 
 #description { 
-  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-weight:100; 
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;

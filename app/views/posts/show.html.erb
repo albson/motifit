@@ -7,23 +7,23 @@
 				<table class="table">
 				<tbody>
 					<tr>
-						<td><strong>Title:</strong></td>
+						<td><strong>Goal:</strong></td>
 						<td><%= @post.title %></td>
 					</tr>
 					<tr>
-						<td><strong>Body:</strong></td>
+						<td><strong>Story:</strong></td>
 						<td><%= @post.body %></td>
 					</tr>
 				</tbody>
 		   </table>
-		   <%= link_to 'Write Comment', new_post_comment_path(@post), class: "btn btn-danger" %>
+		   <%= link_to 'Motivate!', new_post_comment_path(@post), class: "btn btn-danger" %>
        </div>
       </div>
       <div class="col-md-6 col-md-offset-2">
       	
 
       	<% if @comments.blank? %>
-      	<h3> No comments yet </h3>
+      	<h3> Send words of encouragement or advice!</h3>
       	<% else %>
       		<% @comments.each do |comment| %>
       			<div class="comments">
